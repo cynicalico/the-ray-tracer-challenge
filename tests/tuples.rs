@@ -187,3 +187,43 @@ fn test_the_cross_product_of_two_vectors() {
     assert_eq!(trtc::cross(&a, &b), trtc::vector(-1.0, 2.0, -1.0));
     assert_eq!(trtc::cross(&b, &a), trtc::vector(1.0, -2.0, 1.0));
 }
+
+#[test]
+fn test_colors_are_red_green_blue_tuples() {
+    let c = trtc::Color::new(-0.5, 0.4, 1.7);
+
+    assert_eq!(c.r, -0.5);
+    assert_eq!(c.g, 0.4);
+    assert_eq!(c.b, 1.7);
+}
+
+#[test]
+fn test_adding_colors() {
+    let c1 = trtc::Color::new(0.9, 0.6, 0.75);
+    let c2 = trtc::Color::new(0.7, 0.1, 0.25);
+
+    assert_eq!(c1 + c2, trtc::Color::new(1.6, 0.7, 1.0));
+}
+
+#[test]
+fn test_subtracting_colors() {
+    let c1 = trtc::Color::new(0.9, 0.6, 0.75);
+    let c2 = trtc::Color::new(0.7, 0.1, 0.25);
+
+    assert_eq!(c1 - c2, trtc::Color::new(0.2, 0.5, 0.5));
+}
+
+#[test]
+fn test_multiplying_colors_by_a_scalar() {
+    let c = trtc::Color::new(0.2, 0.3, 0.4);
+
+    assert_eq!(c * 2.0, trtc::Color::new(0.4, 0.6, 0.8));
+}
+
+#[test]
+fn test_multiplying_colors() {
+    let c1 = trtc::Color::new(1.0, 0.2, 0.4);
+    let c2 = trtc::Color::new(0.9, 1.0, 0.1);
+
+    assert_eq!(c1 * c2, trtc::Color::new(0.9, 0.2, 0.04));
+}
