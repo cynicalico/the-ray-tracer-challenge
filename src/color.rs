@@ -14,6 +14,12 @@ impl Color {
     }
 }
 
+impl Default for Color {
+    fn default() -> Self {
+        Self::new(0.0, 0.0, 0.0)
+    }
+}
+
 impl PartialEq for Color {
     fn eq(&self, other: &Self) -> bool {
         epsilon_eq(self.r, other.r) && epsilon_eq(self.g, other.g) && epsilon_eq(self.b, other.b)

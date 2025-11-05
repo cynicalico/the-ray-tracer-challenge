@@ -57,6 +57,12 @@ pub fn cross(a: &Tuple, b: &Tuple) -> Tuple {
     )
 }
 
+impl Default for Tuple {
+    fn default() -> Self {
+        vector(0.0, 0.0, 0.0)
+    }
+}
+
 impl PartialEq for Tuple {
     fn eq(&self, other: &Self) -> bool {
         epsilon_eq(self.x, other.x)
