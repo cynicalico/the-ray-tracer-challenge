@@ -1,13 +1,13 @@
 use trtc;
 
 struct Environment {
-    gravity: trtc::Tuple,
-    wind: trtc::Tuple,
+    gravity: trtc::Tuple4,
+    wind: trtc::Tuple4,
 }
 
 struct Projectile {
-    position: trtc::Tuple,
-    velocity: trtc::Tuple,
+    position: trtc::Tuple4,
+    velocity: trtc::Tuple4,
 }
 
 fn tick(env: &Environment, proj: &mut Projectile) {

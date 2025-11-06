@@ -1,13 +1,13 @@
 use trtc;
 
 struct Environment {
-    gravity: trtc::Tuple,
-    wind: trtc::Tuple,
+    gravity: trtc::Tuple4,
+    wind: trtc::Tuple4,
 }
 
 struct Projectile {
-    position: trtc::Tuple,
-    velocity: trtc::Tuple,
+    position: trtc::Tuple4,
+    velocity: trtc::Tuple4,
 }
 
 fn tick(env: &Environment, proj: &mut Projectile) {
@@ -23,7 +23,7 @@ fn main() -> Result<(), std::io::Error> {
 
     let mut projectile = Projectile {
         position: trtc::point(0.0, 1.0, 0.0),
-        velocity: trtc::normalize(&trtc::vector(1.0, 1.8, 0.0)) * 11.25,
+        velocity: trtc::vector(1.0, 1.8, 0.0).normalize() * 11.25,
     };
 
     let mut canvas = trtc::Canvas::new(900, 550);
