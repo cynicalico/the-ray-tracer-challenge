@@ -115,7 +115,6 @@ macro_rules! tuple {
     };
 }
 
-tuple!(Tuple1, 1, [x], [0]);
 tuple!(Tuple2, 2, [x, y], [0, 1]);
 tuple!(Tuple3, 3, [x, y, z], [0, 1, 2]);
 tuple!(Tuple4, 4, [x, y, z, w], [0, 1, 2, 3]);
